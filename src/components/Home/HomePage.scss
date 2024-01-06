@@ -1,0 +1,21 @@
+.homepage-container {
+    height: 85vh !important;
+
+    .homepage-hero {
+        height: 70vh !important;
+
+        .heading {
+            font-size: 80px;
+            letter-spacing: -0.02em;
+        }
+
+        .btn-homepage {
+            background-color: #000;
+            display: inline-block !important;
+        }
+    }
+
+    .footer {
+        height: 15vh !important;
+    }
+}

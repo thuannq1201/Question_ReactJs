@@ -1,51 +1,41 @@
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid-Container>
-        <Navbar.Brand href="#">Blog Của Mắm</Navbar.Brand>
-        <Navbar.Collapse id="navbarScroll">
+    <Navbar expand="lg" className="bg-transparent">
+      <Container className="fluid-Container d-flex justify-content-between pt-3 pb-3">
+        {/* <Navbar.Brand href="#">Blog Của Mắm</Navbar.Brand> */}
+        <NavLink className="navbar-brand col-3" to={"/"}>
+          Blog Của Mắm
+        </NavLink>
+        <Navbar.Collapse id="navbarScroll col-6">
           <Nav
-            className="me-auto my-2 my-lg-0"
+            className="my-2 my-lg-0"
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Link className="nav-link" to="/">
+            <NavLink className="nav-link" to={"/"}>
               Home
-            </Link>
-            <Link className="nav-link" to="user">
+            </NavLink>
+            <NavLink className="nav-link" to="user">
               User
-            </Link>
-            <Link className="nav-link" to="admin">
+            </NavLink>
+            <NavLink className="nav-link" to="admin">
               Admin
-            </Link>
-          </Nav>
-
-          {/* <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form> */}
-
-          <Nav className="my-2 my-lg-0" style={{}} navbarScroll>
-            <NavDropdown title="Setting" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Portfolio</NavDropdown.Item>
-              <NavDropdown.Item href="#action3">Login</NavDropdown.Item>
-              <NavDropdown.Item href="#action3">Logout</NavDropdown.Item>
-            </NavDropdown>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
+        <Nav className="my-2 my-lg-0 col-3 justify-content-end">
+          <NavLink className="nav-link me-3" to="login">
+            Login
+          </NavLink>
+          <NavLink className="btn btn-dark" to="signup">
+            Sign up
+          </NavLink>
+        </Nav>
       </Container>
     </Navbar>
   );

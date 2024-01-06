@@ -1,0 +1,28 @@
+.admin-container {
+    display: flex;
+
+    .admin-sidebar {
+        .pro-sidebar>.pro-sidebar-inner>.pro-sidebar-layout {
+            height: 100vh !important;
+        }
+
+        .pro-sidebar .pro-menu>ul>.pro-sub-menu>.pro-inner-list-item {
+            background-color: rgb(0 0 0 / 15%);
+        }
+    }
+
+    .admin-content {
+
+        width: 100%;
+
+        .admin-header {
+            height: 40px;
+            // border: 1px solid green;
+        }
+
+        .admin-main {
+            // border: 1px solid green;
+
+        }
+    }
+}

@@ -6,4 +6,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-} 
+}
+
+@media (min-width: 1400px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1535px !important;
+}
+}
+
+
+.App-container {
+  .navbar-nav {
+    .nav-link {
+      &.active {
+        color: red;
+      }
+    }
+  }
+}
