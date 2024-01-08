@@ -1,9 +1,18 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    navigate("login");
+    // alert("ok");
+  };
+  const handleSignIn = () => {
+    navigate("signin");
+    // alert("ok");
+  };
   return (
     <Navbar expand="lg" className="bg-transparent">
       <Container className="fluid-Container d-flex justify-content-between pt-3 pb-3">
@@ -29,12 +38,19 @@ const Header = () => {
           </Nav>
         </Navbar.Collapse>
         <Nav className="my-2 my-lg-0 col-3 justify-content-end">
-          <NavLink className="nav-link me-3" to="login">
+          <button
+            className="btn btn-outline me-3"
+            onClick={() => handleLogin()}
+          >
             Login
-          </NavLink>
-          <NavLink className="btn btn-dark" to="signup">
+          </button>
+          <button
+            className="btn btn-dark"
+            to="signup"
+            onClick={() => handleSignIn()}
+          >
             Sign up
-          </NavLink>
+          </button>
         </Nav>
       </Container>
     </Navbar>
