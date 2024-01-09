@@ -12,6 +12,7 @@ const SignIn = () => {
   const [username, setUsername] = useState("");
   const [image, setUserImage] = useState("");
   const [previewImage, setPreviewImage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const validateEmail = (email) => {
     return String(email)
@@ -55,6 +56,7 @@ const SignIn = () => {
       setUserImage(event.target.files[0]);
     }
   };
+
   return (
     <Container className="d-flex flex-column w-50 vh-100 justify-content-center sign-in">
       <div
@@ -77,10 +79,20 @@ const SignIn = () => {
         <Form.Group className="mb-3 col-md-6" controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
-            type="password"
+            id="password"
+            type={showPassword ? "text" : "password"}
             placeholder="Enter password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
+          />
+          <label for="check" className="me-1">
+            Show Password
+          </label>
+          <input
+            id="check"
+            type="checkbox"
+            value={showPassword}
+            onChange={() => setShowPassword((prev) => !prev)}
           />
         </Form.Group>
       </div>

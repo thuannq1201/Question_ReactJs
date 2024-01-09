@@ -8,6 +8,8 @@ import { toast } from "react-toastify";
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
   const handleLogin = async () => {
     // validate
 
@@ -49,10 +51,19 @@ const Login = (props) => {
         <Form.Group controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="Enter password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
+          />
+          <label for="check" className="me-1">
+            Show Password
+          </label>
+          <input
+            id="check"
+            type="checkbox"
+            value={showPassword}
+            onChange={() => setShowPassword((prev) => !prev)}
           />
         </Form.Group>
       </Row>
